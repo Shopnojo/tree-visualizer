@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BINARY SEARCH TREE AND AVL TREE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="top-bar">
+
+  <div class="top-left">
+    <span class="title">BST, AVL Tree Visualizer</span>
+  </div>
+
+  <div class="tree-toggle">
+    <button class="tree-btn active">BST</button>
+    <button class="tree-btn">AVL</button>
+  </div>
+
+</header>
+
+
+  <!-- Main Content -->
+  <main class="main">
+
+   <!-- LEFT FLOATING CONTROL PANEL -->
+    <aside class="side-panel">
+
+      <input type="number" id="valueInput" placeholder="Enter value">
+
+    <button id="insertBtn" class="control-btn">Insert</button>
+    <button id="deleteBtn" class="control-btn">Delete</button>
+    <button id="searchBtn" class="control-btn">Search</button>
+    <button id="resetBtn" class="control-btn">Reset</button>
+
+
+    </aside>
+
+    <!-- Visualization Area -->
+    <section class="visualization" id="visualization"></section>
+
+
+  </main>
+<script src="bst.js"></script>
+<script src="avl.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
