@@ -63,6 +63,48 @@ class BST {
         return null;
     }
 
+    delete(value) {
+    this.root = this.deleteNode(this.root, value);
+}
+
+deleteNode(node, value) {
+
+    if (!node) return null;
+
+    if (value < node.value) {
+        node.left = this.deleteNode(node.left, value);
+    }
+    else if (value > node.value) {
+        node.right = this.deleteNode(node.right, value);
+    }
+    else {
+
+        // Case 1: no child
+        if (!node.left && !node.right) {
+            return null;
+        }
+
+        // Case 2: one child
+        if (!node.left) return node.right;
+        if (!node.right) return node.left;
+
+        // Case 3: two children
+        let successor = this.findMin(node.right);
+        node.value = successor.value;
+        node.right = this.deleteNode(node.right, successor.value);
+    }
+
+    return node;
+}
+
+findMin(node) {
+    while (node.left) {
+        node = node.left;
+    }
+    return node;
+}
+
+
     // Inorder traversal (Left → Root → Right)
     inorder() {
         const result = [];
